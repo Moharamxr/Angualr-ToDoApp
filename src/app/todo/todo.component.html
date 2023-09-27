@@ -1,0 +1,19 @@
+<div class="parent">
+  <div class="child bg-primary p-3">
+    <h1>To-Do App</h1>
+    <input type="text" [(ngModel)]="newTask" placeholder="Enter a new task" />
+    <button (click)="addTask()">Add</button>
+  </div>
+  <div class="child">
+    <ul>
+      <li class="bg-light m-2 p-3"
+        *ngFor="let task of tasks; let i = index"
+        [class.completed]="task.completed"
+      >
+        <span>{{ task.name }}</span>
+        <button (click)="deleteTask(i)">Delete</button>
+        <button (click)="toggleComplete(i)">Complete</button>
+      </li>
+    </ul>
+  </div>
+</div>
